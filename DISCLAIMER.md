@@ -25,10 +25,10 @@ To run the script, simply execute:
 python ra.py
 ```
 
-4.***Saving State***
+4.**Saving State**
   - The script saves the last generated account number in a file named state.json. When rerun, it continues from the last number.
 
-***Disclaimer***
+**Disclaimer**
 Please read the DISCLAIMER.md for more information.
 
 ***Terms and Conditions***
