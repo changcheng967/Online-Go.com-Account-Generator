@@ -1,29 +1,38 @@
-# Disclaimer
+# Online-Go.com Account Generator
 
-This repository is intended for educational purposes and automated testing only. 
+This repository contains a script to automate the creation of accounts on Online-Go.com and join a specific group.
 
-## Terms of Use
+## Setup Instructions
 
-- The scripts provided in this repository automate the creation of accounts on Online-Go.com and joining a specific group. 
-- Users are responsible for their use of these scripts and any consequences that may arise from automated account creation.
-- By using these scripts, you acknowledge that:
-  - Automated account creation may violate the terms of service of Online-Go.com or similar platforms.
-  - Use of these scripts may result in account suspension or other penalties from Online-Go.com.
-  - The creator of these scripts does not endorse or encourage unauthorized use of automated tools on Online-Go.com or similar platforms.
+1. **Install Dependencies:**
+   - Ensure you have Python installed.
+   - Install the required packages using pip:
+     ```bash
+     pip install selenium
+     ```
 
-## Legal Disclaimer
+2. **Download WebDriver:**
+   - Download the WebDriver for your browser (e.g., ChromeDriver for Google Chrome).
+   - Ensure the WebDriver is in your system PATH or specify its location in the script.
 
-- This repository and its contents are provided "as is" without any warranties, express or implied.
-- The creator shall not be liable for any damages arising out of the use or inability to use the scripts provided in this repository.
+3. **Configuration:**
+   - Update the `EMAIL_SUFFIX` and `PASSWORD` variables in the script as needed.
 
-## Open-Source and Use at Your Own Risk
+## Running the Script
 
-- This repository is open-source under the MIT License.
-- Use the scripts at your own risk.
-- These scripts are provided for educational purposes only and are not intended for commercial use.
+To run the script, simply execute:
+```bash
+python ra.py
+```
 
-## Contact Information
+4.***Saving State***
+  - The script saves the last generated account number in a file named state.json. When rerun, it continues from the last number.
 
-- For inquiries regarding these scripts or requests for removal, please contact Changcheng967 at changcheng6541@gmail.com.
+***Disclaimer***
+Please read the DISCLAIMER.md for more information.
 
-By using these scripts, you agree to the terms and conditions outlined above.
+***Terms and Conditions***
+Please read the TERMS and CONDITIONS.md for more information.
+
+***Contact Information***
+For inquiries regarding these scripts or requests for removal, please contact Changcheng967 at changcheng6541@gmail.com.
