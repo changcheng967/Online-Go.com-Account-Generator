@@ -8,9 +8,8 @@ import os
 import time
 
 # Registration details
-BASE_URL = "https://online-go.com"
-REGISTER_URL = BASE_URL + "/register"
-GROUP_URL = BASE_URL + "/group/12594"
+REGISTER_URL = "https://online-go.com/register"
+GROUP_URL = "https://online-go.com/group/12594"
 
 # Account details
 EMAIL_SUFFIX = "@example.com"
@@ -34,10 +33,14 @@ def save_current_account_number(account_number):
     with open(ACCOUNT_FILE, "w") as f:
         f.write(str(account_number))
 
-# Function to generate random usernames
-def generate_random_username(length=8):
+# Function to generate random usernames starting with "Auto_" and followed by a random 5-letter string
+def generate_random_username(length=5):
+    prefix = "Auto_"
     letters = string.ascii_lowercase
-    return ''.join(random.choice(letters) for _ in range(length))
+    while True:
+        random_suffix = ''.join(random.choice(letters) for _ in range(length))
+        username = prefix + random_suffix
+        return username
 
 # Function to create accounts and join Doulet Media group within a range
 def create_and_join_accounts(start_account, end_account):
@@ -45,10 +48,10 @@ def create_and_join_accounts(start_account, end_account):
     i = last_account_number
 
     while i <= end_account:
-        username = generate_random_username(random.randint(5, 9))  # Generate random username of length 5 to 9
+        username = generate_random_username()  # Generate random username with "Auto_" prefix
         email = f"{username.lower()}{EMAIL_SUFFIX}"
 
-        driver = webdriver.Chrome()  # Change this to your WebDriver (e.g., Edge, Firefox)
+        driver = webdriver.Edge()  # Initialize Edge WebDriver
 
         try:
             # Register account
@@ -72,7 +75,7 @@ def create_and_join_accounts(start_account, end_account):
             register_button.click()
 
             # Wait for registration to complete
-            WebDriverWait(driver, 10).until(EC.url_contains(BASE_URL))  # Wait until URL changes to indicate successful registration
+            WebDriverWait(driver, 10).until(EC.url_contains(REGISTER_URL))  # Wait until URL changes to indicate successful registration
             print(f"Account {username} registered.")
 
             time.sleep(2)  # Short delay after registration
