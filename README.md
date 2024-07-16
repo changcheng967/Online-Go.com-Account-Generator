@@ -25,7 +25,15 @@ pip install selenium
 python ra.py
 ```
 
+
 The script will automatically register accounts starting from where it left off or from the beginning if no previous state is found.
+
+## Package
+
+- **PyPI**: [ogs-account-generator](https://pypi.org/project/ogs-account-generator/)
+```python
+pip install ogs-account-generator
+```
 
 ## Notes
 
@@ -35,3 +43,4 @@ The script will automatically register accounts starting from where it left off 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
