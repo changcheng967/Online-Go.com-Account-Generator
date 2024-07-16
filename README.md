@@ -6,7 +6,7 @@ This Python script automates the creation of accounts on Online-Go.com and joins
 
 1. **Python Setup**: Ensure Python 3.x is installed on your system.
 
-2. **WebDriver**: Download the WebDriver for Chrome from [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+2. **WebDriver**: Download the WebDriver for Chrome from [ChromeDriver]([https://sites.google.com/a/chromium.org/chromedriver/downloads](https://googlechromelabs.github.io/chrome-for-testing/)).
 
 3. **Dependencies**: Install required Python packages:
 ```sh
