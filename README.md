@@ -9,7 +9,7 @@ This Python script automates the creation of accounts on Online-Go.com and joins
 2. **WebDriver**: Download the WebDriver for Chrome from [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads).
 
 3. **Dependencies**: Install required Python packages:
-```
+```sh
 pip install selenium
 ```
 
@@ -21,7 +21,7 @@ pip install selenium
 - Update `ra.py` with your WebDriver path and account details.
 
 3. **Run Script**: Execute the script:
-```
+```sh
 python ra.py
 ```
 
@@ -35,4 +35,3 @@ The script will automatically register accounts starting from where it left off 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
