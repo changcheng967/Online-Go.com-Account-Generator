@@ -23,8 +23,8 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 
 ## Contact Us
 
-If you have any questions about this Privacy Policy, please contact us at [your contact email].
+If you have any questions about this Privacy Policy, please contact us at [changcheng6541@gmail.com].
 
 ---
 
-Please replace `[your contact email]` with your preferred contact email address. This template provides a basic structure; feel free to expand or modify it based on your specific needs and requirements.
+
