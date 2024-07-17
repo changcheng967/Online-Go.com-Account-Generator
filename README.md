@@ -1,6 +1,6 @@
 # Online-Go.com Account Generator
 
-This Python script automates the creation of accounts on Online-Go.com and joins the Doulet Media group using Selenium WebDriver.
+This Python script automates the creation of accounts on Online-Go.com and joins  group using Selenium WebDriver.
 
 ## Installation
 
