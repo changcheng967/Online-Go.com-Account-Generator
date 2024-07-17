@@ -18,5 +18,5 @@ We may revise and update these terms of use at any time without notice. By using
 
 ## Contact Us
 
-If you have any questions about this disclaimer, please contact us at changcheng6541@gmail.com.
+If you have any questions about this disclaimer, please contact us at changcheng6541@gmail.com or create a issue.
 
