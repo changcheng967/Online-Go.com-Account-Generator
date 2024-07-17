@@ -1,38 +1,22 @@
-# Online-Go.com Account Generator
+# Disclaimer
 
-This repository contains a script to automate the creation of accounts on Online-Go.com and join a specific group.
+## Liability
 
-## Setup Instructions
+The information contained in this repository is for general information purposes only. The information is provided by changcheng967 and while we endeavor to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the repository or the information, products, services, or related graphics contained on the repository for any purpose. Any reliance you place on such information is therefore strictly at your own risk.
 
-1. **Install Dependencies:**
-   - Ensure you have Python installed.
-   - Install the required packages using pip:
-     ```bash
-     pip install selenium
-     ```
+## Endorsement
 
-2. **Download WebDriver:**
-   - Download the WebDriver for your browser (e.g., ChromeDriver for Google Chrome).
-   - Ensure the WebDriver is in your system PATH or specify its location in the script.
+Any mention of specific products, services, organizations, or individuals does not constitute an endorsement or recommendation unless explicitly stated otherwise.
 
-3. **Configuration:**
-   - Update the `EMAIL_SUFFIX` and `PASSWORD` variables in the script as needed.
+## Code and Software
 
-## Running the Script
+The code and software available in this repository are provided "as is," without any warranties or guarantees. Use of the code is solely at your own discretion and risk, and you are solely responsible for any damage to your computer system or other device or loss of data that results from such use.
 
-To run the script, simply execute:
-```bash
-python ra.py
-```
+## Modifications
 
-4.**Saving State**
-  - The script saves the last generated account number in a file named state.json. When rerun, it continues from the last number.
+We may revise and update these terms of use at any time without notice. By using this repository, you agree to be bound by the current version of these terms.
 
-## Disclaimer
-Please read the DISCLAIMER.md for more information.
+## Contact Us
 
-## Terms and Conditions
-Please read the TERMS and CONDITIONS.md for more information.
+If you have any questions about this disclaimer, please contact us at changcheng6541@gmail.com.
 
-## Contact Information
-For inquiries regarding these scripts or requests for removal, please contact Changcheng967 at changcheng6541@gmail.com.
