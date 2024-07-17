@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # Registration details
 REGISTER_URL = "https://online-go.com/register"
 GROUP_URL = "https://online-go.com/group/12594"
+TOURNAMENT_URL = "https://online-go.com/tournament/118199"
 
 # Account details
 EMAIL_SUFFIX = "@example.com"
@@ -94,9 +95,16 @@ def register_and_join_account(account_number):
         join_button = driver.find_element(By.XPATH, '//*[@id="default-variant-container"]/div[2]/div/div[1]/div[1]/div[1]/div[2]/button')
         join_button.click()
 
-        # Wait for join confirmation
-        WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.group-join-success'), 'You are now a member of this group.'))
-        print(f"Account {username} joined Doulet Media group.")
+        time.sleep(5)  # Longer delay after joining group
+
+        # Navigate to tournament page
+        driver.get(TOURNAMENT_URL)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="default-variant-container"]/div[2]/div[3]/div[1]/p/button')))
+
+        # Click the button on the tournament page
+        tournament_button = driver.find_element(By.XPATH, '//*[@id="default-variant-container"]/div[2]/div[3]/div[1]/p/button')
+        tournament_button.click()
+        print(f"Clicked the button on the tournament page for account {username}.")
 
         # Save the current account number to file after successful account creation
         save_current_account_number(account_number)
