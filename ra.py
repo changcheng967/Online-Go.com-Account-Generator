@@ -111,7 +111,7 @@ def create_and_join_accounts(start_account, end_account):
     last_account_number = read_last_account_number()
     account_range = range(last_account_number, end_account + 1)
 
-    with ThreadPoolExecutor(max_workers=5) as executor:  # Adjust max_workers as needed
+    with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust max_workers as needed
         futures = [executor.submit(register_and_join_account, account_number) for account_number in account_range]
         for future in as_completed(futures):
             try:
@@ -124,7 +124,7 @@ def create_and_join_accounts(start_account, end_account):
 
 # Define the range of accounts to generate
 start_account = 1
-end_account = 100  # Adjust as needed
+end_account = 500  # Adjust as needed
 
 # Execute the function with the specified range of accounts
 create_and_join_accounts(start_account, end_account)

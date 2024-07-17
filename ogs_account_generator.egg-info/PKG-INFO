@@ -1,10 +1,14 @@
 Metadata-Version: 2.1
 Name: ogs-account-generator
-Version: 1.0.2
+Version: 1.1.0
 Summary: Automated account generator for Online-Go.com
-Home-page: https://github.com/changcheng967/ogs-account-generator
+Home-page: https://github.com/changcheng967/Online-Go.com-Account-Generator
 Author: changcheng967
 Author-email: changcheng6541@gmail.com
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
 Description-Content-Type: text/markdown
 Requires-Dist: selenium
 
@@ -16,7 +20,7 @@ This Python script automates the creation of accounts on Online-Go.com and joins
 
 1. **Python Setup**: Ensure Python 3.x is installed on your system.
 
-2. **WebDriver**: Download the WebDriver for Chrome from [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+2. **WebDriver**: Download the WebDriver for Chrome from [ChromeDriver](https://googlechromelabs.github.io/chrome-for-testing/).
 
 3. **Dependencies**: Install required Python packages:
 ```
@@ -28,11 +32,11 @@ pip install selenium
 1. **Clone Repository**: Clone this repository to your local machine.
 
 2. **Configuration**:
-- Update `ra.py` with your WebDriver path and account details.
+- Update `generator.py` with your WebDriver path and account details.
 
 3. **Run Script**: Execute the script:
 ```
-python ra.py
+python generator.py
 ```
 
 The script will automatically register accounts starting from where it left off or from the beginning if no previous state is found.
