@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # Registration details
 REGISTER_URL = "https://online-go.com/register"
 GROUP_URL = "https://online-go.com/group/12594"
+TOURNAMENT_URL = "https://online-go.com/tournament/118199"
 
 # Account details
 EMAIL_SUFFIX = "@example.com"
@@ -94,9 +95,16 @@ def register_and_join_account(account_number):
         join_button = driver.find_element(By.XPATH, '//*[@id="default-variant-container"]/div[2]/div/div[1]/div[1]/div[1]/div[2]/button')
         join_button.click()
 
-        # Wait for join confirmation
-        WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element((By.CSS_SELECTOR, '.group-join-success'), 'You are now a member of this group.'))
-        print(f"Account {username} joined Doulet Media group.")
+        time.sleep(5)  # Longer delay after joining group
+
+        # Navigate to tournament page
+        driver.get(TOURNAMENT_URL)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="default-variant-container"]/div[2]/div[3]/div[1]/p/button')))
+
+        # Click the button on the tournament page
+        tournament_button = driver.find_element(By.XPATH, '//*[@id="default-variant-container"]/div[2]/div[3]/div[1]/p/button')
+        tournament_button.click()
+        print(f"Clicked the button on the tournament page for account {username}.")
 
         # Save the current account number to file after successful account creation
         save_current_account_number(account_number)
@@ -111,7 +119,7 @@ def create_and_join_accounts(start_account, end_account):
     last_account_number = read_last_account_number()
     account_range = range(last_account_number, end_account + 1)
 
-    with ThreadPoolExecutor(max_workers=5) as executor:  # Adjust max_workers as needed
+    with ThreadPoolExecutor(max_workers=8) as executor:  # Adjust max_workers as needed
         futures = [executor.submit(register_and_join_account, account_number) for account_number in account_range]
         for future in as_completed(futures):
             try:
@@ -124,7 +132,7 @@ def create_and_join_accounts(start_account, end_account):
 
 # Define the range of accounts to generate
 start_account = 1
-end_account = 100  # Adjust as needed
+end_account = 500  # Adjust as needed
 
 # Execute the function with the specified range of accounts
 create_and_join_accounts(start_account, end_account)
