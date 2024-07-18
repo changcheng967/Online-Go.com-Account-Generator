@@ -132,7 +132,7 @@ def create_and_join_accounts(start_account, end_account):
 
 # Define the range of accounts to generate
 start_account = 1
-end_account = 500  # Adjust as needed
+end_account = 5000  # Adjust as needed
 
 # Execute the function with the specified range of accounts
 create_and_join_accounts(start_account, end_account)

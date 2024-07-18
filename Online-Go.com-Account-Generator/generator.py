@@ -18,7 +18,7 @@ EMAIL_SUFFIX = "@example.com"
 PASSWORD = "142857"
 
 # Directory to store current account number file
-ACCOUNTS_DIRECTORY = r"C:\Users\chang\OneDrive\Desktop\ogs account creator"
+ACCOUNTS_DIRECTORY = r"C:\Users\chang\OneDrive\Documents\GitHub\Online-Go.com-Account-Generator"
 ACCOUNT_FILE = os.path.join(ACCOUNTS_DIRECTORY, "current_account.txt")
 
 # Function to read the last account number
@@ -132,7 +132,7 @@ def create_and_join_accounts(start_account, end_account):
 
 # Define the range of accounts to generate
 start_account = 1
-end_account = 500  # Adjust as needed
+end_account = 5000  # Adjust as needed
 
 # Execute the function with the specified range of accounts
 create_and_join_accounts(start_account, end_account)
