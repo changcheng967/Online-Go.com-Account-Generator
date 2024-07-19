@@ -11,6 +11,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 # Registration details
 REGISTER_URL = "https://online-go.com/register"
 GROUP_URL = "https://online-go.com/group/12594"
+LADDER_URL = "https://online-go.com/ladder/37768"
 TOURNAMENT_URL = "https://online-go.com/tournament/118199"
 
 # Account details
@@ -18,7 +19,7 @@ EMAIL_SUFFIX = "@example.com"
 PASSWORD = "142857"
 
 # Directory to store current account number file
-ACCOUNTS_DIRECTORY = r"C:\Users\chang\OneDrive\Documents\GitHub\Online-Go.com-Account-Generator"
+ACCOUNTS_DIRECTORY = r"C:\Users\chang\OneDrive\Desktop\ogs account creator"
 ACCOUNT_FILE = os.path.join(ACCOUNTS_DIRECTORY, "current_account.txt")
 
 # Function to read the last account number
@@ -44,7 +45,7 @@ def generate_random_username(length=5):
         username = prefix + random_suffix
         return username
 
-# Function to register and join Doulet Media group for a single account
+# Function to register and join Doulet Media group and ladder for a single account
 def register_and_join_account(account_number):
     username = generate_random_username()  # Generate random username with "Auto_" prefix
     email = f"{username.lower()}{EMAIL_SUFFIX}"
@@ -97,6 +98,17 @@ def register_and_join_account(account_number):
 
         time.sleep(5)  # Longer delay after joining group
 
+        # Navigate to ladder page
+        driver.get(LADDER_URL)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="default-variant-container"]/div[2]/div/div[1]/span[2]/button')))
+
+        # Click the button on the ladder page
+        ladder_button = driver.find_element(By.XPATH, '//*[@id="default-variant-container"]/div[2]/div/div[1]/span[2]/button')
+        ladder_button.click()
+        print(f"Clicked the button on the ladder page for account {username}.")
+
+        time.sleep(5)  # Longer delay after joining ladder
+
         # Navigate to tournament page
         driver.get(TOURNAMENT_URL)
         WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="default-variant-container"]/div[2]/div[3]/div[1]/p/button')))
@@ -114,7 +126,7 @@ def register_and_join_account(account_number):
     finally:
         driver.quit()
 
-# Function to create accounts and join Doulet Media group within a range using concurrent execution
+# Function to create accounts and join Doulet Media group and ladder within a range using concurrent execution
 def create_and_join_accounts(start_account, end_account):
     last_account_number = read_last_account_number()
     account_range = range(last_account_number, end_account + 1)
